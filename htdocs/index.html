@@ -2,35 +2,40 @@
 <html lang="en-DA">
 
 <head>
-    <title>Test</title>
+    <title>Kolding Forum</title>
     <link href="./css/global.css" rel="stylesheet" />
-    <script src="./js/testFuncs.js"></script>
+    <script onload="getUser()" src="./js/ajax.js"></script>
 </head>
 
 <body>
     <div id="container">
         <div id="title">
-            <a href="./index.html" class="title" style="width: 15%; border-left: 2px solid black;">Kolding Forum</a>
+            <a href="/index.html" class="title" style="width: 15%;">Kolding Forum</a>
             <div class="title" style="width: 61%;"></div>
-            <a href="./css.html" class="title" style="width: 8%;">Min Konto</a>
-            <a href="./test.php" class="title" style="width: 10%;">Indstillinger</a>
-            <a href="./php/test.php" class="title" style="width: 6%;">Info</a>
+            <a href="/bruger.html" class="title" style="width: 8%;">Min Konto</a>
+            <a href="/indstillinger.html" class="title" style="width: 10%;">Indstillinger</a>
+            <a href="/info.html" class="title" style="width: 6%; border-right: 0;">Info</a>
         </div>
-        <div id="sidemenu">
-        </div>
+        <div id="sidemenu"></div>
         <div id="right">
             <div id="feed">
+                <div class="spacer"></div>
                 <div class="recommendation"></div>
+                <div class="spacer"></div>
                 <div class="recommendation"></div>
+                <div class="spacer"></div>
                 <div class="recommendation"></div>
+                <div class="spacer"></div>
                 <div class="recommendation"></div>
+                <div class="spacer"></div>
                 <div class="recommendation"></div>
+                <div class="spacer"></div>
             </div>
             <div id="index1">
                 <div id="index2">
-                    <button type="button" onclick="increment('indexCounter', -1, 1, 10)" class="index">&lt;</button>
-                    <div id="indexCounter" class="index" style="width: 20px; height: 20px;">1</div>
-                    <button type="button" onclick="increment('indexCounter', 1, 1, 10)" class="index">&gt;</button>
+                    <button type="button" onclick="" class="index">&lt;</button>
+                    <div id="indexCounter" class="index">1</div>
+                    <button type="button" onclick="" class="index">&gt;</button>
                 </div>
             </div>
         </div>

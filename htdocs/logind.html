@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log ind</title>
+    <link href="./css/global.css" rel="stylesheet" />
+    <script src="./js/ajax.js"></script>
+</head>
+
+<body>
+    <div id="container" style="height: fit-content; min-width: fit-content; width: 10%; margin-top: 20%;">
+        <p style="margin: 20px 20px 0px 20px;">Brugernavn</p>
+        <input type="text" style="margin: 0px 20px 0px 20px;" id="username"></input>
+        <p style="margin: 20px 20px 0px 20px;">Adgangskode</p>
+        <input type="text" style="margin: 0px 20px 0px 20px;" id="password"></input>
+        <br><br>
+        <p id="error" style="margin-left: 20px; color: darkred;"></p>
+        <button onclick="logOn()" style="margin: 20px 0 20px 35%; width: 30%;">Log ind</button>
+    </div>
+</body>
+</html>
