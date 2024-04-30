@@ -3,7 +3,7 @@
 <head>
     <title>Log ind</title>
     <link href="/css/global.css" rel="stylesheet" />
-    <script onload='if(localStorage.getItem("username") != null) {window.location.replace("/index.html");}' src="/js/ajax.js"></script>
+    <script src="/js/ajax.js"></script>
 </head>
 
 <body>
@@ -12,9 +12,11 @@
         <input type="text" style="margin: 0px 20px 0px 20px;" id="username"></input>
         <p style="margin: 20px 20px 0px 20px;">Adgangskode</p>
         <input type="text" style="margin: 0px 20px 0px 20px;" id="password"></input>
+        <p style="margin: 20px 20px 0px 20px;">Gentag adgangskode</p>
+        <input type="text" style="margin: 0px 20px 0px 20px;" id="repeatPassword"></input>
         <br><br>
-        <p id="error" style="margin-left: 20px; color: darkred;"></p>
-        <button onclick="logOn()" style="margin: 20px 0 20px 35%; width: 30%;">Log ind</button>
+        <p id="error" style="margin-left: 20px; color: darkred; text-wrap: stable;"></p>
+        <button onclick="newUser()" style="margin: 20px 0 20px 35%; width: 30%;">Log ind</button>
     </div>
 </body>
 </html>

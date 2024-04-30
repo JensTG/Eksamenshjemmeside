@@ -1,4 +1,5 @@
 <?php
+//Connects to the kf database localhost
 function establish() {
     $servername = "localhost";
     $username = "JensTG";

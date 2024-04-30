@@ -11,7 +11,7 @@ $sql = 'SELECT username FROM members WHERE threadId='.$chatId;
 $result = $conn->query($sql);
 if ($result->data_seek(0)) { // Check if account exists
     while($user = $result->fetch_assoc()) {
-        if($user['username'] == $username) { // Check if user is member
+        if($user['username'] == $username || $user['username'] == "PUBLIC") { // Check if user is member
             echo "correct";
             $conn->close();
             return;
