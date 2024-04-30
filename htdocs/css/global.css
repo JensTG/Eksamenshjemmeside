@@ -54,14 +54,24 @@ body {
     
     float:left;
 }
-.class > .timestamp {
-    
+.message {
+    width: 100%;
+    height: fit-content;
 }
-.class > .sender {
+.message > .timestamp {
+    color: lightgray;
+    font-size: smaller;
 
+    float: left;
+    margin: 0 5px 0 0;
 }
-.class > .content {
+.message > .sender {
+    font-size: smaller;
 
+    float: left;
+    margin: 0 10px 0 0;
+}
+.message > .content {
 }
 
 #container {

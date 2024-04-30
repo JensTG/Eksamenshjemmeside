@@ -15,7 +15,7 @@ if ($result->data_seek($nMsg)) {
     $user = $conn->query($sql);
     $user->data_seek(0);
     $username = $user->fetch_assoc();
-    echo '<div id="message"><div id="timestamp">'.$msg['time'].'</div><div id="sender">'.$username['name'].'</div><div id="content">'.$msg['content'].'</div></div>';
+    echo '<div class="message"><div class="timestamp">'.$msg['time'].'</div><div class="sender">'.$username['name'].':</div><div class="content">'.$msg['content'].'</div></div>';
 } else echo 'error';
 
 $conn->close();
