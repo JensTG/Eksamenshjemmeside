@@ -4,7 +4,7 @@
 <head>
     <title>Chat</title>
     <link href="/css/global.css" rel="stylesheet" />
-    <script src="/js/ajax.js"></script>
+    <script onload="checkChatPermission(false)" src="/js/ajax.js"></script>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
         <div id="chat"></div>
         <div id="textarea">
             <div style="height: 25%;"></div>
-            <input type="text" id="textbox"></input>
-            <button onclick="sessionStorage.setItem('test', 2)" id="sendButton">Send</button>
+            <input focus type="text" id="textbox"></input>
+            <button onclick="checkChatPermission(true)" id="sendButton">Send</button>
         </div>
     </div>
 </body>

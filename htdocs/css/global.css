@@ -54,6 +54,15 @@ body {
     
     float:left;
 }
+.class > .timestamp {
+    
+}
+.class > .sender {
+
+}
+.class > .content {
+
+}
 
 #container {
     background-color: white;

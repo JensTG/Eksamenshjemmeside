@@ -3,7 +3,7 @@
 <head>
     <title>Log ind</title>
     <link href="./css/global.css" rel="stylesheet" />
-    <script src="./js/ajax.js"></script>
+    <script onload='if(localStorage.getItem("username") != null) {window.location.replace("/index.html");}' src="./js/ajax.js"></script>
 </head>
 
 <body>
