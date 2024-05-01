@@ -24,7 +24,7 @@ body {
 
     float: left;
 }
-.recommendation {
+.thread {
     background-color: rgb(255, 255, 255);
     
     width: 95%;
@@ -108,36 +108,17 @@ body {
 
     float: left;
 }
-#right {
-    width: 30%;
-    height: 97%;
-    
-
-    margin: 0;
-    border-left: 2px solid black;
-
-    float: right;
-}
 #feed {
     background-color: gray;
     
-    width: 100%;
-    height: 92%;
-}
-#index2 {
-    
-    width: fit-content;
-    height: 100%;
+    width: 30%;
+    height: 97%;
+    box-sizing: border-box;
 
-    margin: auto;
-}
-#index1 {
-    background-color: lightgray;
+    border-left: 2px solid black;
 
-    width: 100%; 
-    height: 8%; 
-
-    border-top: 2px solid black;
+    float: right;
+    overflow-y: scroll;
 }
 #textarea {
     background-color: lightgray;

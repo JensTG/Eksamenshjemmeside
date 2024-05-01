@@ -144,6 +144,27 @@ function getMessage(nMsg) {
     xmlhttp.open("GET", "/php/getMessage.php?chatId=" + chatId + "&nMsg=" + nMsg);
     xmlhttp.send();
 }
-function getThreads() {
+async function getThreads() {
+    var username = localStorage.getItem("username");
 
+    var threadPromise = new Promise((resolve) => {
+        var xmlhttp = new XMLHttpRequest;
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                resolve(xmlhttp.response);
+            }
+        }
+        
+        xmlhttp.open("GET", "/php/constructThread.php?username=" + username);
+        xmlhttp.send();
+    });
+
+    const response = await threadPromise;
+    const rows = response.split("ROW");
+    rows.length--;
+    for (let row of rows) {
+        const cols = row.split("COLUMN");
+        let newThread = '<div onclick="directToThread(' + cols[1] + ')" class="thread">' + cols[0] + '</div>';
+        document.getElementById("feed").innerHTML += newThread + '<div class="spacer"></div>';
+    }
 }
