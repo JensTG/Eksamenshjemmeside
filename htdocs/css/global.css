@@ -32,6 +32,10 @@ body {
 
     border: 1px solid black;
     margin: auto;
+    padding: 4px;
+}
+.thread > .threadTitle {
+    font-weight: bold;
 }
 #feed > .spacer {
     height: 4%;
@@ -72,6 +76,19 @@ body {
     margin: 0 10px 0 0;
 }
 .message > .content {
+    font-size: small;
+}
+.previewMessage {
+    width: 100%;
+    height: fit-content;
+}
+.previewMessage > .sender {
+    font-size: small;
+
+    float: left;
+    margin: 0 10px 0 0;
+}
+.previewMessage > .content {
     font-size: small;
 }
 
@@ -151,4 +168,14 @@ body {
     text-wrap: pretty;
     overflow-y: scroll;
     float: right;
+}
+#middle {
+    background-color: white;
+
+    width: 50%;
+    height: 97%;
+
+    padding: 10px;
+
+    float: left;
 }

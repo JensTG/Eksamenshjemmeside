@@ -164,7 +164,25 @@ async function getThreads() {
     rows.length--;
     for (let row of rows) {
         const cols = row.split("COLUMN");
-        let newThread = '<div onclick="directToThread(' + cols[1] + ')" class="thread">' + cols[0] + '</div>';
+        let newThread = '<div onclick="directToThread(' + cols[1] + ')" class="thread"><p class="threadTitle">' + cols[0] + '<br><br></p>';
+        newThread += await getPreview(cols[1]) + '</div>';
         document.getElementById("feed").innerHTML += newThread + '<div class="spacer"></div>';
     }
+}
+function directToThread(chatId) {
+    localStorage.setItem("chatId", chatId);
+    window.location.replace("/samtale.html");
+}
+async function getPreview(chatId) {
+    var previewPromise = new Promise((resolve) => {
+        var xmlhttp = new XMLHttpRequest;
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                resolve(xmlhttp.responseText);
+            }
+        }
+        xmlhttp.open("GET", "/php/getPreviewMessages.php?chatId=" + chatId);
+        xmlhttp.send();
+    });
+    return await previewPromise;
 }

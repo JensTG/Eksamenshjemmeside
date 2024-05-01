@@ -6,7 +6,22 @@ $conn = establish();
 $username = $_GET['username'];
 
 // Get available threads:
-$sql = 'SELECT messages.threadId, threads.name, COUNT(messages.messageId) FROM messages INNER JOIN threads ON messages.threadId=threads.threadId WHERE messages.threadId IN (SELECT members.threadId FROM members WHERE username="PUBLIC" OR username="'.$username.'") GROUP BY threadId ORDER BY COUNT(messageId) DESC;';
+$sql = 'SELECT 
+threads.threadId, threads.name, COUNT(messages.messageId)
+FROM
+threads
+    LEFT JOIN
+messages ON threads.threadId = messages.threadId
+WHERE
+threads.threadId IN (SELECT 
+        members.threadId
+    FROM
+        members
+    WHERE
+        members.username = "PUBLIC"
+            OR members.username = "'.$username.'")
+GROUP BY threads.threadId
+ORDER BY COUNT(messages.messageId) DESC';
 
 $result = $conn->query($sql);
 
